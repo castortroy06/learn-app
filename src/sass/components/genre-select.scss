@@ -1,0 +1,48 @@
+@import '../bootstrap/variables';
+
+.genres {
+    background-color: #232323;
+    min-height: 300px;
+
+    &--list {
+        position: relative;
+
+        &::before,
+        &:after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            left: 0;
+            right: 0;
+        }
+
+        &::before {
+            height: 2px;
+            background-color: #424242;
+            border-bottom: 1px solid transparent;
+            bottom: 1px;
+        }
+
+        &::after {
+            height: 1px;
+            background-color: $black-100;
+            bottom: -1px;
+        }
+
+        &--item {
+            display: inline-flex;
+
+            a {
+                color: $white;
+                margin: 0 1.875rem 0 0;
+                padding: 1.25rem 0;
+                text-decoration: none;
+                z-index: 1;
+
+                &.active {
+                    border-bottom: 3px solid $color-red;
+                }
+            }
+        }
+    }
+}

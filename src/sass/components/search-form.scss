@@ -1,0 +1,11 @@
+@import '../bootstrap/variables';
+
+.form-holder {
+    background-color: $black;
+    min-height: 400px;
+    padding: 20px 0;
+
+    h2 {
+        color: $white;
+    }
+}
