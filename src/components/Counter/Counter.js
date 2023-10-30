@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import '../../sass/components/button-holder.scss';
 
 class Counter extends React.Component {
