@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import './App.scss';
+import Counter from './components/Counter';
+import SearchForm from './components/SearchForm';
+import GenreSelect from './components/GenreSelect';
+
+
+const genres = ['All', 'Documentary', 'Comedy', 'Horror', 'Crime'];
 
 function App() {
+  const [active, setActive] = useState(genres[0]);
+  const callback = (e) => {
+    e.preventDefault();
+    setActive(e.target.textContent);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="app">
+      <header className="app-header">
+        <h1 className="app-link">
+          Lesson 1
+        </h1>
       </header>
+
+      <div className="main-content">
+        <div className="container">
+          <Counter />
+          <SearchForm />
+          <GenreSelect genres={genres} active={active} onSelect={(e) => callback(e)} />
+        </div>
+      </div>
     </div>
   );
 }

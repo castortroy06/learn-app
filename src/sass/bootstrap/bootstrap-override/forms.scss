@@ -1,0 +1,13 @@
+@import "../variables";
+@import "~bootstrap/scss/forms";
+
+.form-label {
+    line-height: 1.21875;
+    text-transform: uppercase;
+    display: block;
+    text-align: left;
+}
+
+.form-control {
+    margin-bottom: 1.875rem;
+}
