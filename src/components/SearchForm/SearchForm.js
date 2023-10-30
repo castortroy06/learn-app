@@ -1,20 +1,18 @@
 import React, { useState } from 'react';
-import '../../sass/components/search-form.scss';
+import '../sass/components/search-form.scss';
 
 
-const SearchForm = ({ onChange }) => {
+const SearchForm = () => {
   const [searchTerm, setSearchTerm] = useState('My input search value');
+
+  const handleInputChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    //console.log(searchTerm);
-    onChange(searchTerm);
-  };
-
-  const handleKeyDown = (e) => {
-    if (e.key === 'Enter') {
-      onChange(e.target.value);
-    }
+    // You can perform the search or any other action here
+    console.log('Search term:', searchTerm);
   };
 
   return (
@@ -23,17 +21,16 @@ const SearchForm = ({ onChange }) => {
       <form className="text-start" onSubmit={handleSubmit}>
         <label className="form-label" htmlFor="search">Search</label>
         <input name="search" className="form-control" id="search"
-          data-testid="search-input"
           type="text"
           placeholder="Search..."
           value={searchTerm}
-          onChange={(e) => { setSearchTerm(e.target.value) }}
-          onKeyDown={handleKeyDown}
+          onChange={handleInputChange}
         />
-        <button data-testid="submit-button" className="btn btn-primary" type="submit">Submit</button>
+        <button className="btn btn-primary" type="submit">Submit</button>
       </form>
     </div>
   );
 };
+
 
 export default SearchForm;

@@ -1,21 +1,18 @@
 import React, { useState } from 'react';
 import './App.scss';
-import Counter from './components/Counter/Counter';
-import SearchForm from './components/SearchForm/SearchForm';
-import GenreSelect from './components/GenreSelect/GenreSelect';
+import Counter from './components/Counter';
+import SearchForm from './components/SearchForm';
+import GenreSelect from './components/GenreSelect';
 
 
 const genres = ['All', 'Documentary', 'Comedy', 'Horror', 'Crime'];
 
 function App() {
   const [active, setActive] = useState(genres[0]);
-
-  const callback = (value) => {
-    setActive(value);
+  const callback = (e) => {
+    e.preventDefault();
+    setActive(e.target.textContent);
   };
-
-  const handleSubmit = (value) => { };
-
   return (
     <div className="app">
       <header className="app-header">
@@ -27,8 +24,8 @@ function App() {
       <div className="main-content">
         <div className="container">
           <Counter />
-          <SearchForm onChange={handleSubmit} />
-          <GenreSelect genres={genres} active={active} onChange={callback} />
+          <SearchForm />
+          <GenreSelect genres={genres} active={active} onSelect={(e) => callback(e)} />
         </div>
       </div>
     </div>
