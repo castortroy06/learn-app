@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import '../sass/components/genre-select.scss';
 
 const GenreSelect = ({ genres, active, onSelect }) => {
