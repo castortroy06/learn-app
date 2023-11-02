@@ -1,12 +1,15 @@
-import React from "react";
-import '../../sass/components/genre-select.scss';
+import React, {useState} from "react";
+import './genre-select.scss';
 
-const GenreSelect = ({ genres, active, onChange }) => {
+const GenreSelect = ({ genres, initialActive, onChange }) => {
 
     const handleClick = (e) => {
         e.preventDefault();
+        setActive(e.target.textContent);
         onChange(e.target.textContent);
     };
+
+    const [active, setActive] = useState(initialActive);
 
     return (
         <div className="genres">
