@@ -13,13 +13,12 @@ const GenreSelect = ({ genres, active, onChange }) => {
             <h2 className='text-center'>Ticket 3: Genres select</h2>
             {genres.length &&
                 <ul className="genres--list">
-                    {genres.map((genre, key) => {
-                        return (
+                    {genres.map((genre, key) => (
                             <li className="genres--list--item" data-testid="genre-item" key={key}>
                                 <a data-testid={`genre-link-${genre}`} onClick={(e) => handleClick(e)} className={active === genre ? 'active' : ''} href="/">{genre}</a>
                             </li>
-                        );
-                    })}
+                        )
+                    )}
                 </ul>
             }
         </div>

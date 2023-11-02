@@ -9,16 +9,13 @@ const genres = ['All', 'Documentary', 'Comedy', 'Horror', 'Crime'];
 
 function App() {
   const [active, setActive] = useState(genres[0]);
-  
+
   const callback = (value) => {
-    //console.log(value);
     setActive(value);
   };
-  
-  const handleSubmit = (value) => {
-    //console.log(value);
-  };
-  
+
+  const handleSubmit = (value) => { };
+
   return (
     <div className="app">
       <header className="app-header">
