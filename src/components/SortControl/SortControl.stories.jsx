@@ -4,7 +4,7 @@ export default {
     title: 'Sort Control',
 }
 
-const handleSubmit = (value) => {
+const handleSubmit = () => {
 
 };
 
