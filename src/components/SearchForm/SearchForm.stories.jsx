@@ -5,8 +5,8 @@ export default {
 }
 
 
-const handleSubmit = (value) => {
-    console.log(value);
+const handleSubmit = () => {
+    
 };
 
 export const Default = () => <SearchForm onChange={handleSubmit} />
