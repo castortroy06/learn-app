@@ -9,11 +9,11 @@ const genres = ['All', 'Documentary', 'Comedy', 'Horror', 'Crime'];
 
 function App() {  
   const callback = (value) => {
-    
+
   };
   
   const handleSubmit = (value) => {
-    
+
   };
   
   return (

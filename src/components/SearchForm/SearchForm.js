@@ -27,6 +27,7 @@ const SearchForm = ({ onChange }) => {
           placeholder="Search..."
           value={searchTerm}
           onChange={(e) => { setSearchTerm(e.target.value) }}
+          onKeyDown={handleKeyDown}
         />
         <button data-testid="submit-button" className="btn btn-primary" type="submit">Submit</button>
       </form>

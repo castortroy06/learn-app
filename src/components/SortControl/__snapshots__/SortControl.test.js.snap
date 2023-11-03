@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SortControl match snapshot 1`] = `
+<div
+  className="sort-control"
+>
+  <p
+    className="sort-control--label"
+  >
+    Sort by
+  </p>
+  <div
+    className="sort-control--dropdown"
+    data-testid="sort-control-dropdown"
+    id="sort-control"
+    name="sort-control"
+  >
+    <a
+      className="active"
+      data-testid="sort-control-Release Date"
+      href="/"
+      onClick={[Function]}
+    >
+      Release Date
+    </a>
+    <a
+      className=""
+      data-testid="sort-control-Title"
+      href="/"
+      onClick={[Function]}
+    >
+      Title
+    </a>
+  </div>
+</div>
+`;
+
+exports[`SortControl renders all elements successfully 1`] = `
+<div
+  className="sort-control"
+>
+  <p
+    className="sort-control--label"
+  >
+    Sort by
+  </p>
+  <div
+    className="sort-control--dropdown"
+    data-testid="sort-control-dropdown"
+    id="sort-control"
+    name="sort-control"
+  >
+    <a
+      className="active"
+      data-testid="sort-control-Release Date"
+      href="/"
+      onClick={[Function]}
+    >
+      Release Date
+    </a>
+    <a
+      className=""
+      data-testid="sort-control-Title"
+      href="/"
+      onClick={[Function]}
+    >
+      Title
+    </a>
+  </div>
+</div>
+`;

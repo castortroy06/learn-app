@@ -1,0 +1,47 @@
+@import '../../sass/bootstrap/variables';
+
+.movie-tile {
+    position: relative;
+    background-color: $gray-300;
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.9375rem;
+
+    img {
+        margin-bottom: 1.375rem;
+        display: block;
+        width: 100%;
+    }
+
+    &--container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &--name {
+        font-size: 1.125rem;
+        font-weight: 500;
+        line-height: 1.2188;
+        color: $white;
+        margin-bottom: 0.5rem;
+    }
+
+    &--year,
+    &--categories {
+        font-size: 0.875rem;
+        font-weight: 500;
+        line-height: 1.2193;
+        color: $white;
+    }
+
+    &--categories {
+        opacity: 0.5;
+    }
+
+    &--year {
+        border: 1px solid $gray-500;
+        padding: 0.25rem 0.5rem;
+        margin-bottom: 0.5rem;
+        border-radius: 0.25rem;
+        opacity: 0.5;
+    }
+}
