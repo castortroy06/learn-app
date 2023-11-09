@@ -1,0 +1,58 @@
+@import '../../sass/bootstrap/variables';
+
+.movie-details {
+    background-color: $gray-300;
+    padding: 5.625rem 0;
+    color: $white;
+    font-weight: 300;
+
+    &--name {
+        font-size: 2.5rem;
+        line-height: 1.219;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+        font-weight: 300;
+    }
+
+    &--container {
+        padding-left: 1.875rem;
+    }
+
+    &--rate {
+        width: 60px;
+        height: 60px;
+        font-size: 1.25rem;
+        line-height: 1.219;
+        border: 1px solid $white;
+        border-radius: 50%;
+        display: inline-block;
+        padding: 18px 10px;
+        text-align: center;
+        position: relative;
+        top: -10px;
+        left: 25px;
+    }
+
+    &--categories {
+        font-size: 0.875rem;
+        line-height: normal;
+        font-weight: 500;
+        opacity: 0.5;
+        margin-bottom: 1.875rem;
+    }
+
+    &--year-duration {
+        font-size: 1.5rem;
+        font-style: normal;
+        color: $color-red;
+        margin-bottom: 1.875rem;
+    }
+
+    &--year {
+        margin-right: 3.1875rem;
+    }
+
+    &--description {
+        opacity: 0.5;
+    }
+}

@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieTile match snapshot 1`] = `
+<div
+  className="movie-tile col-4"
+>
+  <img
+    alt="Pulp Fiction"
+    data-testid="image"
+    src="/images/movies/pulp-fiction.png"
+  />
+  <div
+    className="movie-tile--container"
+  >
+    <h6
+      className="movie-tile--name display-6"
+      data-testid="name"
+    >
+      Pulp Fiction
+    </h6>
+    <p
+      className="movie-tile--year col-15"
+      data-testid="year"
+    >
+      2004
+    </p>
+  </div>
+  <p
+    className="movie-tile--categories"
+    data-testid="categories"
+  >
+    Action & Adventure
+  </p>
+</div>
+`;
+
+exports[`MovieTile renders all elements successfully 1`] = `
+<div
+  className="movie-tile col-4"
+>
+  <img
+    alt="Pulp Fiction"
+    data-testid="image"
+    src="/images/movies/pulp-fiction.png"
+  />
+  <div
+    className="movie-tile--container"
+  >
+    <h6
+      className="movie-tile--name display-6"
+      data-testid="name"
+    >
+      Pulp Fiction
+    </h6>
+    <p
+      className="movie-tile--year col-15"
+      data-testid="year"
+    >
+      2004
+    </p>
+  </div>
+  <p
+    className="movie-tile--categories"
+    data-testid="categories"
+  >
+    Action & Adventure
+  </p>
+</div>
+`;

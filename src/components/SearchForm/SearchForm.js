@@ -10,6 +10,10 @@ const SearchForm = ({ onChange }) => {
     onChange(searchTerm);
   };
 
+  const handleChange = (e) => {
+    setSearchTerm(e.target.value);
+  }
+
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
       onChange(e.target.value);
@@ -26,7 +30,7 @@ const SearchForm = ({ onChange }) => {
           type="text"
           placeholder="Search..."
           value={searchTerm}
-          onChange={(e) => { setSearchTerm(e.target.value) }}
+          onChange={handleChange}
           onKeyDown={handleKeyDown}
         />
         <button data-testid="submit-button" className="btn btn-primary" type="submit">Submit</button>
