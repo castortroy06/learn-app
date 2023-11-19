@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import './sort-control.scss';
 
 const SortControl = ({ onChange }) => {

@@ -1,4 +1,4 @@
-import MovieDetails from "./MovieDetails";
+import MovieDetails from './MovieDetails';
 
 export default {
     title: 'Movie Details',
