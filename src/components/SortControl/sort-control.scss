@@ -1,0 +1,50 @@
+@import '../../sass/bootstrap/variables';
+
+.sort-control {
+    background-color: $gray-300;
+    letter-spacing: 0.889px;
+    text-transform: uppercase;
+    display: flex;
+
+    &--label {
+        color: $white;
+        letter-spacing: 0.889px;
+        opacity: 0.6027;
+        margin-right: 1.9375rem;
+    }
+
+    &--dropdown {
+        color: $white;
+        border: none;
+        background-color: transparent;
+        position: relative;
+
+        &::after {
+            content: url('./img/arrow.svg');
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        a {
+            text-decoration: none;
+            font-weight: 500;
+            border: none;
+            color: $white;
+            display: none;
+            padding-right: 1.5rem;
+            position: relative;
+            z-index: 1;
+
+            &.active {
+                display: block;
+            }
+        }
+
+        &.expanded {
+            a {
+                display: block;
+            }
+        }
+    }
+}
