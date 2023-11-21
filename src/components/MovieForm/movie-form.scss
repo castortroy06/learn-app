@@ -1,0 +1,11 @@
+@import '../../sass/bootstrap/variables';
+
+.movie-form {
+    background-color: $gray-300;
+
+    h2 {
+        margin-bottom: 2.375rem;
+        color: $white;
+        font-weight: 300;
+    }
+}
