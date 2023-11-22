@@ -1,4 +1,4 @@
-import MovieForm from '/MovieForm';
+import MovieForm from './MovieForm';
 
 export default {
     title: 'Movie Form',

@@ -13,7 +13,6 @@ const GenreSelect = ({ genres, initialActive, onChange }) => {
 
     return (
         <div className="genres">
-            <h2 className='text-center'>Ticket 3: Genres select</h2>
             {genres.length &&
                 <ul className="genres--list">
                     {genres.map((genre, key) => (

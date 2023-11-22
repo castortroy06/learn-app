@@ -6,9 +6,10 @@ import SearchForm from './SearchForm';
 
 describe('SearchForm', () => {
     it('Search input initial value passed', () => {
-        const expectedInitialValue = 'My input search value';
+        const expectedInitialValue = '';
 
-        render(<SearchForm />);
+        const handleSubmit = jest.fn();
+        render(<SearchForm onSearch={handleSubmit} />);
         const inputElement = screen.getByTestId('search-input');
 
         expect(inputElement).toHaveValue(expectedInitialValue);
@@ -17,7 +18,7 @@ describe('SearchForm', () => {
     it('onChange callback called with a proper value on form Submit', () => {
         const testValue = 'test-value';
         const handleSubmit = jest.fn();
-        render(<SearchForm onChange={handleSubmit} />);
+        render(<SearchForm onSearch={handleSubmit} />);
 
         const inputElement = screen.getByTestId('search-input');
         const submitButton = screen.getByTestId('submit-button');
@@ -31,12 +32,12 @@ describe('SearchForm', () => {
     it('onChange callback called with a proper value on input Enter click', () => {
         const testValue = 'test-value';
         const handleSubmit = jest.fn();
-        render(<SearchForm onChange={handleSubmit} />);
+        render(<SearchForm onSearch={handleSubmit} />);
 
         const inputElement = screen.getByTestId('search-input');
 
         fireEvent.change(inputElement, { target: { value: testValue } });
-        fireEvent.keyDown(inputElement, {  key: 'Enter', code: 'Enter'  });
+        fireEvent.keyDown(inputElement, { key: 'Enter', code: 'Enter' });
 
         expect(handleSubmit).toHaveBeenCalledWith(testValue);
     });

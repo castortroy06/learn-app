@@ -1,11 +1,38 @@
 @import '../../sass/bootstrap/variables';
 
+.search-form {
+    &::after {
+        content: '';
+        display: block;
+        border-bottom: 10px solid rgba($gray-600, 0.5);
+    }
+}
+
 .form-holder {
     background-color: $black;
     min-height: 400px;
     padding: 1.25rem 0;
+    padding: 6.25rem 7.5rem;
+    background-image: url('../../../public/layout/hero-bg.png');
+    background-size: cover;
 
     h2 {
+        font-size: 2.5rem;
+        line-height: 1.219;
+        font-weight: 300;
         color: $white;
+        margin-bottom: 2.375rem;
+    }
+
+    form {
+        display: flex;
+
+        .form-control {
+            margin-bottom: 0;
+        }
+
+        .btn {
+            margin-left: 0.875rem;
+        }
     }
 }
