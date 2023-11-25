@@ -4,16 +4,11 @@ export default {
     title: 'Movie Tile',
 }
 
-const handleClick = () => {
-    
-};
-
 const movieTile = {
-    'name': 'Pulp Fiction',
-    'imageUrl': 'pulp-fiction.png',
-    'releaseYear': 2004, 
+    'title': 'Pulp Fiction',
+    'poster_path': 'https://image.tmdb.org/t/p/w500/bXNvzjULc9jrOVhGfjcc64uKZmZ.jpg',
+    'release_date': 2004,
     'genres': ['Action & Adventure'],
-    'onClick': handleClick(),
 }
 
 export const Default = () => <MovieTile {...movieTile} />

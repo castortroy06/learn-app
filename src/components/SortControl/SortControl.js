@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import './sort-control.scss';
 
-const SortControl = ({ onChange }) => {
+const SortControl = ({ criterion, onChange }) => {
     const options = ['Release Date', 'Title'];
-    const [active, setActive] = useState(options[0]);
+    const [active, setActive] = useState(criterion);
 
     const handleClick = (e) => {
         e.preventDefault();

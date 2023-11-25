@@ -2,7 +2,6 @@
 
 .genres {
     background-color: $gray-300;
-    min-height: 300px;
 
     &--list {
         position: relative;
@@ -38,6 +37,7 @@
                 padding: 1.25rem 0;
                 text-decoration: none;
                 z-index: 1;
+                text-transform: uppercase;
 
                 &.active {
                     border-bottom: 3px solid $color-red;

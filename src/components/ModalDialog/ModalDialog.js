@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import './modal-dialog.scss';
 
 const modalRoot = document.createElement('div');
 modalRoot.setAttribute('id', 'modal-root');
