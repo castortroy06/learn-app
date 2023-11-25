@@ -4,6 +4,7 @@ import MovieDetails from '../MovieDetails/MovieDetails';
 import GenreSelect from '../GenreSelect/GenreSelect';
 import SortControl from '../SortControl/SortControl';
 import MovieTile from '../MovieTile/MovieTile';
+import { fetchMovies } from '../../api/MovieListAPI';
 import './movie-list.scss';
 
 const MovieListPage = () => {
@@ -18,48 +19,19 @@ const MovieListPage = () => {
     const genres = ['all', 'documentary', 'comedy', 'horror', 'crime'];
 
     useEffect(() => {
-        async function fetchMyAPI() {
-            let apiUrl = 'http://localhost:4000/movies';
-
-            const params = new URLSearchParams();
-            params.append('limit', 6);
-
-            if (searchQuery || searchDone) {
-                params.append('searchBy', 'title');
-                params.append('search', searchQuery);
-            }
-            switch (sortCriterion) {
-                case 'Release Date':
-                    params.append('sortBy', 'release_date');
-                    params.append('sortOrder', 'asc');
-                    break;
-
-                case 'Title':
-                    params.append('sortBy', 'title');
-                    params.append('sortOrder', 'asc');
-                    break;
-            }
-            if (activeGenre !== 'all') {
-                params.append('filter', activeGenre);
-            }
-
-            if (params.size) {
-                apiUrl += '?' + params.toString();
-            }
-
+        const loadData = async () => {
             try {
-                let response = await fetch(apiUrl)
-                response = await response.json()
+                const response = await fetchMovies(sortCriterion, searchQuery, searchDone, activeGenre);
+                console.log(response);
                 setMovieList(response.data);
                 setTotalMovies(response.totalAmount);
                 setSearchDone(true);
-            }
-            catch (error) {
-                console.error(error);
-            }
-        }
+            } catch (e) {
 
-        fetchMyAPI()
+            }
+        };
+
+        loadData();
     }, [searchQuery, sortCriterion, activeGenre]);
 
     const handleSearch = (searchValue) => {

@@ -4,10 +4,6 @@ export default {
     title: 'Movie Tile',
 }
 
-const handleClick = () => {
-
-};
-
 const movieTile = {
     'title': 'Pulp Fiction',
     'poster_path': 'https://image.tmdb.org/t/p/w500/bXNvzjULc9jrOVhGfjcc64uKZmZ.jpg',
@@ -15,4 +11,4 @@ const movieTile = {
     'genres': ['Action & Adventure'],
 }
 
-export const Default = () => <MovieTile onClick={handleClick} {...movieTile} />
+export const Default = () => <MovieTile {...movieTile} />

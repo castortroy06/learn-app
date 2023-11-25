@@ -3,13 +3,8 @@ import './movie-details.scss';
 
 const MovieDetails = (props) => {
 
-    const handleClick = (e) => {
-        console.log(props);
-    
-    }
-
     return (
-        <div className="movie-details row" onClick={handleClick}>
+        <div className="movie-details row">
             <img className="col-4" data-testid="image" alt={props.title} src={props.poster_path} />
             <div className="movie-details--container col-8">
                 <h2 data-testid="name" className="movie-details--name">{props.title}<span className="movie-details--rate">{props.vote_average}</span></h2>
