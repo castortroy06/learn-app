@@ -17,7 +17,6 @@ const MovieListPage = () => {
     const [activeGenre, setActiveGenre] = useState(searchParams.get('active-genre') || 'all');
 
     const [movieList, setMovieList] = useState([]);
-    const [selectedMovie, setSelectedMovie] = useState(null);
     const [totalMovies, setTotalMovies] = useState(0);
     const [searchDone, setSearchDone] = useState(false);
 
@@ -51,13 +50,9 @@ const MovieListPage = () => {
         setSortCriterion(criterion);
     }
 
-    const handleMovieClick = (props) => {
-        setSelectedMovie(props);
-    }
-
     return (
         <div className='movie-list'>
-            <Outlet />
+            <Outlet context={[handleSearch]} />
             <div className='movie-list--container'>
                 <div className='movie-list--control-panel'>
                     <GenreSelect genres={genres} initialActive={activeGenre} onChange={handleGenreChange} />
@@ -68,7 +63,7 @@ const MovieListPage = () => {
 
                 <div className='movie-list--movies'>
                     {movieList.map((movie, key) => (
-                        <MovieTile key={key} onClick={handleMovieClick} {...movie} />
+                        <MovieTile key={key} {...movie} />
                     ))}
                 </div>
             </div>

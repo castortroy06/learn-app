@@ -9,13 +9,14 @@ export const fetchMovies = async (sortCriterion, searchQuery, searchDone, active
         params.append('search', searchQuery);
     }
     switch (sortCriterion) {
-        case 'Release Date':
-            params.append('sortBy', 'release_date');
+        case 'Title':
+            params.append('sortBy', 'title');
             params.append('sortOrder', 'asc');
             break;
 
-        case 'Title':
-            params.append('sortBy', 'title');
+        case 'Release Date':
+        default:
+            params.append('sortBy', 'release_date');
             params.append('sortOrder', 'asc');
             break;
     }
