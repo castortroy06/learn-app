@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import SearchForm from '../SearchForm/SearchForm';
-import MovieDetails from '../MovieDetails/MovieDetails';
-import GenreSelect from '../GenreSelect/GenreSelect';
-import SortControl from '../SortControl/SortControl';
-import MovieTile from '../MovieTile/MovieTile';
+import { useSearchParams, Outlet } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
+import GenreSelect from '../../components/GenreSelect/GenreSelect';
+import SortControl from '../../components/SortControl/SortControl';
+import MovieTile from '../../components/MovieTile/MovieTile';
 import { fetchMovies } from '../../api/MovieListAPI';
 import './movie-list.scss';
 
 const MovieListPage = () => {
-    const [searchQuery, setSearchQuery] = useState('');
-    const [sortCriterion, setSortCriterion] = useState('Release Date');
-    const [activeGenre, setActiveGenre] = useState('all');
+    const [searchParams] = useSearchParams();
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const [searchQuery, setSearchQuery] = useState(searchParams.get('search') || '');
+    const [sortCriterion, setSortCriterion] = useState(searchParams.get('sort') || 'Release Date');
+    const [activeGenre, setActiveGenre] = useState(searchParams.get('active-genre') || 'all');
+
     const [movieList, setMovieList] = useState([]);
     const [selectedMovie, setSelectedMovie] = useState(null);
     const [totalMovies, setTotalMovies] = useState(0);
@@ -22,10 +27,10 @@ const MovieListPage = () => {
         const loadData = async () => {
             try {
                 const response = await fetchMovies(sortCriterion, searchQuery, searchDone, activeGenre);
-                console.log(response);
                 setMovieList(response.data);
                 setTotalMovies(response.totalAmount);
                 setSearchDone(true);
+                navigate(`${location.pathname}?search=${searchQuery}&sort=${sortCriterion}&active-genre=${activeGenre}`);
             } catch (e) {
 
             }
@@ -52,7 +57,7 @@ const MovieListPage = () => {
 
     return (
         <div className='movie-list'>
-            {!!selectedMovie ? <MovieDetails onClick={handleMovieClick} {...selectedMovie} /> : <SearchForm searchQuery={searchQuery} onSearch={handleSearch} />}
+            <Outlet />
             <div className='movie-list--container'>
                 <div className='movie-list--control-panel'>
                     <GenreSelect genres={genres} initialActive={activeGenre} onChange={handleGenreChange} />
