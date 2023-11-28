@@ -6,6 +6,12 @@
         display: block;
         border-bottom: 10px solid rgba($gray-600, 0.5);
     }
+
+    .add-movie-btn {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+    }
 }
 
 .form-holder {

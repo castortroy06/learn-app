@@ -57,7 +57,7 @@ const MovieListPage = () => {
 
     return (
         <div className='movie-list'>
-            <Outlet />
+            <Outlet context={[handleSearch]} />
             <div className='movie-list--container'>
                 <div className='movie-list--control-panel'>
                     <GenreSelect genres={genres} initialActive={activeGenre} onChange={handleGenreChange} />

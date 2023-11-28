@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
+import './modal-dialog.scss';
 
 const modalRoot = document.createElement('div');
 modalRoot.setAttribute('id', 'modal-root');
@@ -21,8 +22,8 @@ const ModalDialog = ({ isOpen, onClose, modalTitle, children }) => {
     }
 
     return ReactDOM.createPortal(
-        <div className='modal-dialog-wrapper'>
-            <button onClick={onClose}>Close Modal</button>
+        <div className='modal-dialog--wrapper'>
+            <button className='modal-dialog--close-modal' onClick={onClose}>Close Modal</button>
             <h2 className="modal-dialog-title">{modalTitle}</h2>
             {children}
         </div>,
